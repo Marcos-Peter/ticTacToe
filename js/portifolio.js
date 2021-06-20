@@ -1,5 +1,6 @@
 // flip the main card
 const card = document.querySelector("#card");
+
 card.addEventListener("click", (event) => {
   if(event.target.matches('#front'))
   {
@@ -14,7 +15,6 @@ card.addEventListener("click", (event) => {
 // Getting all the cells of the html document
 const cells = document.querySelectorAll('.cell');
 let shiftCheck = true;
-
 let playerOne = 'X';
 let playerTwo = 'O';
 
@@ -40,7 +40,10 @@ const conditions = [
 function logic(id) {
     const cell = document.getElementById(id);
     shift = shiftCheck ? playerOne : playerTwo;
-    cell.textContent = shift;
+    if(cell.textContent === "")
+    {
+        cell.textContent = shift;
+    }
     cell.classList.add(shift);
     winnerCheck(shift);
 }
