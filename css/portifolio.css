@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+/* navbar */
+.navMenu {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  -webkit-transform: translate(-10%, -10%);
+  transform: translate(-10%, -10%);
+}
+
+.navMenu a {
+  color: #ecbeb4;
+  text-decoration: none;
+  font-size: 8pt;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-flex;
+  width: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:hover {
+  color: #cfbae1;
+}
+
+.navMenu .dot {
+  width: 6px;
+  height: 6px;
+  background: #fddb3a;
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.navMenu a:nth-child(1):hover ~ .dot {
+  -webkit-transform: translateX(15px);
+  transform: translateX(15px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(2):hover ~ .dot {
+  -webkit-transform: translateX(110px);
+  transform: translateX(110px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(3):hover ~ .dot {
+  -webkit-transform: translateX(200px);
+  transform: translateX(200px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+.navMenu a:nth-child(4):hover ~ .dot {
+  -webkit-transform: translateX(276px);
+  transform: translateX(276px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+}
+
+/* card flip */
+#card {
+  padding-top: 15%;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+}
+
+.face {
+  width: 280px;
+  height: 319px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  border-radius: 20px;
+}
+
+#front {
+  background-color: #ffffda;
+  border: 2px solid #b6afaf;
+  backface-visibility: hidden;
+  color: #000000;
+  cursor: pointer;
+}
+
+#back {
+  background-color: #73a5a5;
+  border: 2px solid #4d8383;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+/* board game */
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2px;
+  cursor: pointer;
+}
+
+.cell {
+  width: 75px;
+  height: 75px;
+  font-size: 40pt;
+  margin: 4px 2px;
+  font-weight: 300;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #63acac;
+  opacity: 0.9;
+  transition: 0.2s;
+}
+
+.cell:hover {
+  opacity: 1;
+  transform: scale(1.07);
+  box-shadow: 2px 2px 3px #92cccc;
+}
+
