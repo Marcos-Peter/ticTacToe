@@ -1,11 +1,12 @@
 // flip the main card
 const card = document.querySelector("#card");
 
-card.addEventListener("click", (event) => {
-  if(event.target.matches('#front'))
-  {
+function btn() {
     card.classList.toggle("flip");
-  } else if(event.target.matches('.cell'))
+}
+
+card.addEventListener("click", (event) => {
+  if(event.target.matches('.cell'))
   {
     logic(event.target.id);
   }
@@ -29,19 +30,12 @@ const conditions = [
     [2,4,6]
 ];
 
-// Add an action at the click and the arrow function make the test for the cells.
-// document.addEventListener('click', (event) => {
-//     if(event.target.matches('.cell'))
-//     {
-//         logic(event.target.id);
-//     }
-// });
-
 function logic(id) {
     const cell = document.getElementById(id);
     shift = shiftCheck ? playerOne : playerTwo;
     if(cell.textContent === "")
     {
+        cell.classList.toggle("cellFlip");
         cell.textContent = shift;
     }
     cell.classList.add(shift);
