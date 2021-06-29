@@ -84,3 +84,30 @@ function gameOver(winner = null) {
         console.log("We have a tie!");
     }
 }
+
+function gameMenu() {
+    let choice = "";
+    let menu = true;
+    let msg = "";
+
+    while(menu) {
+        switch (choice) {
+            case 1:
+                msg = "New Game"
+                break;
+            case 2: 
+                msg = "Leaderboard";
+                break;
+            case 3:
+                msg = "Configurations"
+                break;
+            case 4:
+                msg = "Leave"
+                menu = !menu;
+                break;
+            default:
+                msg = "Please, select a valid option";
+        }
+    }
+}
+
